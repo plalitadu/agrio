@@ -9,11 +9,26 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* agrioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* agrioTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-agrio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-agrio.a */; };
+		0ECB13C8CE58483398609EB9 /* IBMPlexSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB3F8CE54F247B08B78232E /* IBMPlexSans-Medium.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1CE8004AFEEC41CB98C3AA9C /* IBMPlexSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7269947C6A7B4D3F94A29C4B /* IBMPlexSans-LightItalic.ttf */; };
+		57410FE99A18473FB660B3D2 /* IBMPlexSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74F23E08AC42409CB7AD7CCC /* IBMPlexSans-Light.ttf */; };
+		61C15A0C0FA14A69855F9587 /* IBMPlexSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B13C9B36596467E9EB5C360 /* IBMPlexSans-BoldItalic.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-agrio-agrioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-agrio-agrioTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8C7650F09FBA4C1EAC6B194E /* IBMPlexSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C15F8D106EB94D2C88EE89B9 /* IBMPlexSans-SemiBoldItalic.ttf */; };
+		9BDABCBC6BA245F28B234C74 /* IBMPlexSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D650811BCDE243CCBFF12707 /* IBMPlexSans-Bold.ttf */; };
+		A33B1400C0A94C83A01E63F4 /* IBMPlexSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A9FD97AABD04B9C81101F86 /* IBMPlexSans-Italic.ttf */; };
+		ABACF6DC7496481780311EEE /* IBMPlexSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D81853F451346249C840F58 /* IBMPlexSans-MediumItalic.ttf */; };
+		B60007D32982C35200163A5C /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B60007D22982C35100163A5C /* fonts */; };
+		C3152418AACC4EE18426CBDD /* IBMPlexSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D9E4A845E245FDBD488F05 /* IBMPlexSans-SemiBold.ttf */; };
+		DCFD381B119C4670A3C65D9F /* IBMPlexSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92C655CD6DE44C16904B6D66 /* IBMPlexSans-ExtraLight.ttf */; };
+		EF4F6409D6AD4B299FC2548F /* IBMPlexSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2EFCF6E67FA7421C9D8E9E1C /* IBMPlexSans-ThinItalic.ttf */; };
+		F8A30C37A44147CA81BF2AD5 /* IBMPlexSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E40D9DD064DF181DD2402 /* IBMPlexSans-Regular.ttf */; };
+		FE36B551921F476791B35473 /* IBMPlexSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77E0EEF44C464B8095E94C0B /* IBMPlexSans-ExtraLightItalic.ttf */; };
+		FE48A3CC4B644ACBB6D984D9 /* IBMPlexSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2107FFC6D2514D8680F61030 /* IBMPlexSans-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +52,27 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = agrio/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = agrio/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-agrio-agrioTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-agrio-agrioTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2107FFC6D2514D8680F61030 /* IBMPlexSans-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Thin.ttf"; path = "../src/assets/fonts/IBMPlexSans-Thin.ttf"; sourceTree = "<group>"; };
+		22D9E4A845E245FDBD488F05 /* IBMPlexSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-SemiBold.ttf"; path = "../src/assets/fonts/IBMPlexSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		2EFCF6E67FA7421C9D8E9E1C /* IBMPlexSans-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-ThinItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-ThinItalic.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-agrio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agrio.debug.xcconfig"; path = "Target Support Files/Pods-agrio/Pods-agrio.debug.xcconfig"; sourceTree = "<group>"; };
+		4A6E40D9DD064DF181DD2402 /* IBMPlexSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Regular.ttf"; path = "../src/assets/fonts/IBMPlexSans-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-agrio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agrio.release.xcconfig"; path = "Target Support Files/Pods-agrio/Pods-agrio.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-agrio-agrioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agrio-agrioTests.debug.xcconfig"; path = "Target Support Files/Pods-agrio-agrioTests/Pods-agrio-agrioTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-agrio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-agrio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DB3F8CE54F247B08B78232E /* IBMPlexSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Medium.ttf"; path = "../src/assets/fonts/IBMPlexSans-Medium.ttf"; sourceTree = "<group>"; };
+		7269947C6A7B4D3F94A29C4B /* IBMPlexSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-LightItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		74F23E08AC42409CB7AD7CCC /* IBMPlexSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Light.ttf"; path = "../src/assets/fonts/IBMPlexSans-Light.ttf"; sourceTree = "<group>"; };
+		77E0EEF44C464B8095E94C0B /* IBMPlexSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-ExtraLightItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		7D81853F451346249C840F58 /* IBMPlexSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-MediumItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = agrio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-agrio-agrioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agrio-agrioTests.release.xcconfig"; path = "Target Support Files/Pods-agrio-agrioTests/Pods-agrio-agrioTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A9FD97AABD04B9C81101F86 /* IBMPlexSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Italic.ttf"; path = "../src/assets/fonts/IBMPlexSans-Italic.ttf"; sourceTree = "<group>"; };
+		8B13C9B36596467E9EB5C360 /* IBMPlexSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-BoldItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		92C655CD6DE44C16904B6D66 /* IBMPlexSans-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-ExtraLight.ttf"; path = "../src/assets/fonts/IBMPlexSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B60007D22982C35100163A5C /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		C15F8D106EB94D2C88EE89B9 /* IBMPlexSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-SemiBoldItalic.ttf"; path = "../src/assets/fonts/IBMPlexSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		D650811BCDE243CCBFF12707 /* IBMPlexSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSans-Bold.ttf"; path = "../src/assets/fonts/IBMPlexSans-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -116,12 +146,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				B60007D22982C35100163A5C /* fonts */,
 				13B07FAE1A68108700A75B9A /* agrio */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* agrioTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				ACEBF053D5844A7DAEA0F2D9 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -135,6 +167,27 @@
 				00E356EE1AD99517003FC87E /* agrioTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ACEBF053D5844A7DAEA0F2D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D650811BCDE243CCBFF12707 /* IBMPlexSans-Bold.ttf */,
+				8B13C9B36596467E9EB5C360 /* IBMPlexSans-BoldItalic.ttf */,
+				92C655CD6DE44C16904B6D66 /* IBMPlexSans-ExtraLight.ttf */,
+				77E0EEF44C464B8095E94C0B /* IBMPlexSans-ExtraLightItalic.ttf */,
+				8A9FD97AABD04B9C81101F86 /* IBMPlexSans-Italic.ttf */,
+				74F23E08AC42409CB7AD7CCC /* IBMPlexSans-Light.ttf */,
+				7269947C6A7B4D3F94A29C4B /* IBMPlexSans-LightItalic.ttf */,
+				6DB3F8CE54F247B08B78232E /* IBMPlexSans-Medium.ttf */,
+				7D81853F451346249C840F58 /* IBMPlexSans-MediumItalic.ttf */,
+				4A6E40D9DD064DF181DD2402 /* IBMPlexSans-Regular.ttf */,
+				22D9E4A845E245FDBD488F05 /* IBMPlexSans-SemiBold.ttf */,
+				C15F8D106EB94D2C88EE89B9 /* IBMPlexSans-SemiBoldItalic.ttf */,
+				2107FFC6D2514D8680F61030 /* IBMPlexSans-Thin.ttf */,
+				2EFCF6E67FA7421C9D8E9E1C /* IBMPlexSans-ThinItalic.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -244,6 +297,21 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				9BDABCBC6BA245F28B234C74 /* IBMPlexSans-Bold.ttf in Resources */,
+				61C15A0C0FA14A69855F9587 /* IBMPlexSans-BoldItalic.ttf in Resources */,
+				DCFD381B119C4670A3C65D9F /* IBMPlexSans-ExtraLight.ttf in Resources */,
+				FE36B551921F476791B35473 /* IBMPlexSans-ExtraLightItalic.ttf in Resources */,
+				A33B1400C0A94C83A01E63F4 /* IBMPlexSans-Italic.ttf in Resources */,
+				57410FE99A18473FB660B3D2 /* IBMPlexSans-Light.ttf in Resources */,
+				1CE8004AFEEC41CB98C3AA9C /* IBMPlexSans-LightItalic.ttf in Resources */,
+				0ECB13C8CE58483398609EB9 /* IBMPlexSans-Medium.ttf in Resources */,
+				ABACF6DC7496481780311EEE /* IBMPlexSans-MediumItalic.ttf in Resources */,
+				B60007D32982C35200163A5C /* fonts in Resources */,
+				F8A30C37A44147CA81BF2AD5 /* IBMPlexSans-Regular.ttf in Resources */,
+				C3152418AACC4EE18426CBDD /* IBMPlexSans-SemiBold.ttf in Resources */,
+				8C7650F09FBA4C1EAC6B194E /* IBMPlexSans-SemiBoldItalic.ttf in Resources */,
+				FE48A3CC4B644ACBB6D984D9 /* IBMPlexSans-Thin.ttf in Resources */,
+				EF4F6409D6AD4B299FC2548F /* IBMPlexSans-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

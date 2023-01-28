@@ -112,19 +112,24 @@
 // export default App;
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StatusBar} from 'react-native';
+import { Button } from 'react-native-paper';
+import { COLORS_PRIMARY } from './src/configs/theme';
+import RootNavigation from './src/navigation/RootNavigation';
+import { LoginScreen } from './src/screens/LoginScreen';
+import { SignUpScreen } from './src/screens/SignUpScreen';
 
 const App = () => {
+  const loginHandle = () => {
+    console.log('login');
+  };
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text>Hello, world!</Text>
-      
-    </View>
+    <>
+      <StatusBar backgroundColor={COLORS_PRIMARY} barStyle="dark-content" />
+      <RootNavigation />
+      {/* <LoginScreen /> */}
+      {/* <SignUpScreen /> */}
+    </>
   );
 };
 export default App;
