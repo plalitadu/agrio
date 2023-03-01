@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>IBMPlexSans-Bold.ttf</string>
@@ -68,6 +68,13 @@
 		<string>fonts/SimpleLineIcons.ttf</string>
 		<string>fonts/Zocial.ttf</string>
 		<string>fonts/Octicons.ttf</string>
+		<string>IBMPlexSansThai-Bold.ttf</string>
+		<string>IBMPlexSansThai-ExtraLight.ttf</string>
+		<string>IBMPlexSansThai-Light.ttf</string>
+		<string>IBMPlexSansThai-Medium.ttf</string>
+		<string>IBMPlexSansThai-Regular.ttf</string>
+		<string>IBMPlexSansThai-SemiBold.ttf</string>
+		<string>IBMPlexSansThai-Thin.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

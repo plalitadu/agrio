@@ -66,7 +66,7 @@ const LoginScreen: React.FC<LoginProps> = () => {
           flexDirection: 'column',
           justifyContent: 'space-evenly',
         }}>
-        <Header />
+        <Header color='textSecondary'/>
         <View
           style={{
             flexDirection: 'column',

@@ -1,10 +1,11 @@
 import React, {Children} from 'react';
 import {Text as TextOriginal, TextProps, StyleSheet} from 'react-native';
-import {STANDARD_FONT, STANDARD_FONT_BOLD} from '../../configs/theme';
+import {STANDARD_FONT, STANDARD_FONT_BOLD,STANDARD_THAI_FONT,STANDARD_THAI_FONT_BOLD} from '../../configs/theme';
 
 const styles = StyleSheet.create({
   h1: {
     fontFamily: STANDARD_FONT_BOLD,
+    fontSize:22
   },
   h2: {
     fontFamily: STANDARD_FONT_BOLD,
@@ -21,6 +22,10 @@ const styles = StyleSheet.create({
   h6: {
     fontFamily: STANDARD_FONT_BOLD,
   },
+  headerThai:{
+    fontFamily:STANDARD_THAI_FONT_BOLD,
+    fontSize:22 
+  },
   body1: {
     fontFamily: STANDARD_FONT,
     fontSize: 16
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
   overline: {},
   textPrimary: {color: '#202020'},
   textSecondary: {
-    color: '#000',
+    color: '#469B72',
   },
   warning: {},
   error: {
@@ -56,6 +61,7 @@ interface TextCustomProps extends TextProps {
   overline?: boolean;
   center?: boolean;
   colors?: 'textPrimary' | 'textSecondary' | 'warning' | 'error';
+  headerThai?:boolean
 }
 
 const Text: React.FC<TextCustomProps> = props => {
@@ -69,6 +75,7 @@ const Text: React.FC<TextCustomProps> = props => {
           props.h4 && styles.h4,
           props.h5 && styles.h5,
           props.h6 && styles.h6,
+          props.headerThai && styles.headerThai,
           props.body1 && styles.body1,
           props.body2 && styles.body2,
           props.subtitle && styles.subtitle,

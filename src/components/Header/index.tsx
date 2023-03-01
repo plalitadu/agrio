@@ -5,18 +5,28 @@ import {STANDARD_FONT_BOLD} from '../../configs/theme';
 
 const styles = StyleSheet.create({
   logoText: {
-    color: '#469B72',
+    // color: '#469B72',
     fontSize: 30,
     fontFamily: STANDARD_FONT_BOLD,
     textAlign: 'center',
     paddingBottom: 10,
   },
+  textPrimary:{
+    color:'#202020'
+  },
+  textSecondary :{
+    color :'#469B72'
+   }
 });
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  color: 'textPrimary' | 'textSecondary';
+}
+
+const Header: React.FC<HeaderProps> = (props) => {
   return (
     <View>
-      <Text h2={true} style={styles.logoText}>
+      <Text h2={true} colors={props.color} style={styles.logoText} >
         Agrio
       </Text>
     </View>

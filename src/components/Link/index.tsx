@@ -14,12 +14,14 @@ type LinkProps = {
     page: string;
     param?:any ;
     children: any;
+    style?:any;
+    onClick?:any
 }
 
 const Link: React.FC<LinkProps> = props => {
   return (
     <>
-      <LinkOriginal style={styles.hyperLink} to={{screen: props.page, params: props.param}}>{props.children}</LinkOriginal>
+      <LinkOriginal style={[styles.hyperLink, props.style]} to={{screen: props.page, params: props.param}} onPress={props.onClick}>{props.children}</LinkOriginal>
     </>
   );
 };

@@ -12,4 +12,11 @@ export type TabParamList = {};
 export type RootStackParamList = {
   LOGIN: {};
   SIGNUP: {};
+  POLICY:{};
+  FARM:{};
+  MAINTAB:{};
+  HOME:{};
+  DEVICE:{};
+  SHOP:{};
+  SETTING:{};
 };

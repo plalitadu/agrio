@@ -47,7 +47,7 @@ const SignUpScreen: React.FC = () => {
           flexDirection: 'column',
           justifyContent: 'space-evenly',
         }}>
-        <Header />
+        <Header color="textSecondary" />
         <View
           style={{
             flexDirection: 'column',

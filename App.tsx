@@ -118,6 +118,8 @@ import { COLORS_PRIMARY } from './src/configs/theme';
 import RootNavigation from './src/navigation/RootNavigation';
 import { LoginScreen } from './src/screens/LoginScreen';
 import { SignUpScreen } from './src/screens/SignUpScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import MainTab from './src/navigation/MainTab';
 
 const App = () => {
   const loginHandle = () => {
@@ -127,6 +129,8 @@ const App = () => {
     <>
       <StatusBar backgroundColor={COLORS_PRIMARY} barStyle="dark-content" />
       <RootNavigation />
+    
+    
       {/* <LoginScreen /> */}
       {/* <SignUpScreen /> */}
     </>

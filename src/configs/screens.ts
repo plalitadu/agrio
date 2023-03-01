@@ -7,7 +7,14 @@ type Screen = {
   const SCREEN:Screen={
     
     LOGIN:'LOGIN',
-    SIGNUP:'SIGNUP'
+    SIGNUP:'SIGNUP',
+    POLICY:'POLICY',
+    FARM:'FARM',
+    MAINTAB:'MAINTAB',
+    HOME:'HOME',
+    DEVICE:'DEVICE',
+    SHOP:'SHOP',
+    SETTING:'SETTING',
 
   }
 
