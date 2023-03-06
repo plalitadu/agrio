@@ -19,7 +19,7 @@ const RootNavigation: React.FC = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName={SCREEN.MAINTAB}>
+        initialRouteName={SCREEN.POLICY}>
         <Stack.Screen
           name={SCREEN.LOGIN}
           component={LoginScreen}></Stack.Screen>
@@ -34,7 +34,6 @@ const RootNavigation: React.FC = () => {
           component={FarmListScreen}></Stack.Screen>
         <Stack.Screen name={SCREEN.MAINTAB} component={MainTab}></Stack.Screen>
       </Stack.Navigator>
-     
     </NavigationContainer>
   );
 };
