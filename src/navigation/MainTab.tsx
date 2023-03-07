@@ -60,13 +60,7 @@ const tabBarOption: BottomTabNavigationOptions = {
     // maxHeight:30
     // marginBottom:10,
     // marginBottom:20
-  },
-  tabBarLabelStyle: {
-    //   fontSize: Scale.point(12),
-    // position:'relative',
-    // height: 0,
-    fontFamily: 'GraphikTH-SemiBold',
-  },
+  }
 };
 
 const MainTab: React.FC = () => {
