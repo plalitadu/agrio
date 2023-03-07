@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button} from 'react-native-paper';
 
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Platform, TouchableOpacity} from 'react-native';
 import {STANDARD_FONT_BOLD, STANDARD_FONT} from '../../configs/theme';
 import {TextInput} from '../../components/TextInput';
 import {Text} from '../../components/Text';
 import {Header} from '../../components/Header';
 import {useNavigation, Link as LinkOri} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
-import { Link } from '../../components/Link';
+import {Link} from '../../components/Link';
+import { authenToken } from '../../api/apiAuth';
 
 const styles = StyleSheet.create({
   main: {
@@ -47,17 +48,38 @@ const styles = StyleSheet.create({
     marginLeft: 2,
     alignSelf: 'flex-start',
   },
+  subtitle: {borderBottomColor: '#202020', borderBottomWidth: 1},
 });
 
 type LoginProps = {
   email?: string;
+  password?: string
 };
 
 const LoginScreen: React.FC<LoginProps> = () => {
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  const [email, setEmail] = useState<string>('jca.dev@demouser');
+  const [password, setPassword] = useState<string>('jcadevelopers1234!');
   const navigation = useNavigation<ScreenNavigationProp>();
 
+  const loginHandle = async () =>{
+    if(email !== '' && password !== ''){
+      
+      const token = await authenToken({username:email,password:password})
+      if(token.access !== undefined){
+        
+        navigation.navigate('MAINTAB',{token:token.access})
+      }else{
+        //alert login error
+      }
+     
+    }
+    
+  }
+
+  useEffect(()=>{
+    console.log('email',email)
+    console.log('pass',password)
+  },[email,password])
   return (
     <View style={styles.main}>
       <View
@@ -66,7 +88,7 @@ const LoginScreen: React.FC<LoginProps> = () => {
           flexDirection: 'column',
           justifyContent: 'space-evenly',
         }}>
-        <Header color='textSecondary'/>
+        <Header color="textSecondary" />
         <View
           style={{
             flexDirection: 'column',
@@ -110,7 +132,7 @@ const LoginScreen: React.FC<LoginProps> = () => {
             buttonColor="#000000"
             textColor="#ffffff"
             mode="elevated"
-            onPress={() => console.log('Pressed')}>
+            onPress={loginHandle}>
             Log in
           </Button>
         </View>
@@ -137,15 +159,20 @@ const LoginScreen: React.FC<LoginProps> = () => {
             </Text>
           </View>
           <View style={{marginLeft: 5}}>
-            {/* <Text
-              colors="textPrimary"
-              subtitle={true}
-              body1={true}
-              style={{fontWeight: 'bold'}} 
-              onPress={() => navigation.navigate('SIGNUP',{})}>
-              Sign up
-            </Text> */}
-            <Link page="SIGNUP" >Sign up</Link>
+            {Platform.OS === 'ios' ? (
+              <View
+                style={{borderBottomColor: '#202020', borderBottomWidth: 1}}>
+                <TouchableOpacity onPress={()=>navigation.navigate('SIGNUP', {})}>
+                  <Text>
+                    Sign up
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <Link page="SIGNUP" style={styles.subtitle}>
+                Sign up
+              </Link>
+            )}
           </View>
         </View>
       </View>

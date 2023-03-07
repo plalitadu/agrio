@@ -84,7 +84,7 @@ const PolicySrceen: React.FC = () => {
         style={{
           justifyContent: 'center',
           height: 600,
-          marginTop: -10,
+          marginTop: -30,
           padding: 2,
           flex: 2,
         }}>

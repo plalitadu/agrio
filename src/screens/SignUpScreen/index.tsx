@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Platform,TouchableOpacity} from 'react-native';
 import {Header} from '../../components/Header';
 import {STANDARD_FONT, STANDARD_FONT_BOLD} from '../../configs/theme';
 import {Text} from '../../components/Text';
 import {TextInput} from '../../components/TextInput';
 import {Button} from 'react-native-paper';
-import { Link } from '../../components/Link';
+import {Link} from '../../components/Link';
+import {ScreenNavigationProp} from '../../configs/common';
+import {useNavigation} from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   main: {
     flexDirection: 'column',
     padding: 10,
-    paddingTop:50,
+    paddingTop: 50,
     flex: 1,
     // justifyContent: 'space-evenly',
   },
@@ -33,6 +35,8 @@ const SignUpScreen: React.FC = () => {
   const [phoneNo, setPhoneNo] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigation = useNavigation<ScreenNavigationProp>();
 
   const phoneNoHandle = (value: any) => {
     const result = value.replace(/[^0-9]/g, '');
@@ -128,14 +132,17 @@ const SignUpScreen: React.FC = () => {
             </Text>
           </View>
           <View style={{marginLeft: 5}}>
-            {/* <Text
-              colors="textPrimary"
-              subtitle={true}
-              body1={true}
-              style={{fontWeight: 'bold'}}>
-              Log in
-            </Text> */}
-             <Link page="LOGIN" > Log in</Link>
+            {Platform.OS === 'ios' ? (
+              <View
+                style={{borderBottomColor: '#202020', borderBottomWidth: 1}}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('LOGIN', {})}>
+                  <Text>Log in</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <Link page="LOGIN"> Log in</Link>
+            )}
           </View>
         </View>
       </View>
