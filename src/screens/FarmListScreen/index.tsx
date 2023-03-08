@@ -1,23 +1,23 @@
 import React from 'react';
 import HeaderMain from '../../components/HeaderMain';
-import {View, Image, Pressable, ScrollView} from 'react-native';
+import {View, Image, Pressable, ScrollView, StyleSheet} from 'react-native';
 import {Text} from '../../components/Text';
 import Images from '../../configs/images';
+import {useNavigation} from '@react-navigation/native';
+import {ScreenNavigationProp} from '../../configs/common';
+import ButtonIcon from '../../components/ButtonIcon';
 
-const Item = ({title}) => (
-  <View
-    style={{
-      backgroundColor: '#f9c2ff',
-      padding: 20,
-      marginVertical: 8,
-      marginHorizontal: 16,
-    }}>
-    <Text style={{fontSize: 32}}>{title}</Text>
-  </View>
-);
+const styles = StyleSheet.create({
+  button: {
+    flexDirection: 'row',
+    // flex: 3,
+    marginLeft: 50,
+  },
+});
 
 const FarmListScreen: React.FC = (props: any) => {
   console.log('props', props);
+  const navigation = useNavigation<ScreenNavigationProp>();
 
   const DATA = [
     {
@@ -34,13 +34,36 @@ const FarmListScreen: React.FC = (props: any) => {
     },
   ];
 
+  const manageFarmHandle = () => {
+    navigation.navigate('MANAGE', {});
+  };
+
+  const pressHandle = () => {
+    console.log('pressHandle');
+  };
+
   return (
     <>
       <View style={{flexDirection: 'column', flex: 1}}>
-       
         <View style={{flexDirection: 'column', backgroundColor: '#FFFFFF'}}>
           <View>
-            <HeaderMain type="farm-list">Farm</HeaderMain>
+            <HeaderMain
+              type="farm-list"
+              onClick={manageFarmHandle}
+              headerName="Farm"
+              >
+              <View style={styles.button}>
+                <ButtonIcon icon="plus" type="textBtn" onPress={pressHandle}>
+                  Add Farm
+                </ButtonIcon>
+                <ButtonIcon icon="bars" type="textBtn" onPress={manageFarmHandle}>
+                  Manage
+                </ButtonIcon>
+                <ButtonIcon icon="bell" type="iconBtn" onPress={pressHandle}>
+                  {' '}
+                </ButtonIcon>
+              </View>
+            </HeaderMain>
           </View>
 
           {/* <View
