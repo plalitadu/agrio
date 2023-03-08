@@ -8,7 +8,7 @@ import {FlatList, View, Text, StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
-    justifyContent:'space-between',
+    justifyContent: 'space-between',
     // backgroundColor: '#f9c2ff',
     padding: 15,
     height: 50,
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
   },
-  icon:{marginTop:-14}
+  icon: {marginTop: -14},
 });
 
 const DATA = [
@@ -50,34 +50,36 @@ const ManageFarmScreen: React.FC = () => {
   return (
     <>
       <View style={{flexDirection: 'column', flex: 1}}>
-        <View>
+        <View >
           <HeaderMain type="back-header" headerName="Manage Farm">
             <ButtonIcon icon="arrow-left" type="iconBtn" onPress={backHandle}>
               {' '}
             </ButtonIcon>
           </HeaderMain>
         </View>
-        <FlatList
-          data={DATA}
-          //   renderItem={({item}) => <Item title={item.title} />}
-          renderItem={item => (
-            <View style={styles.item}>
-              <View >
-                <Text style={styles.title}>{item.item.title}</Text>
+        {/* <View style={{marginTop:-10}}> */}
+          <FlatList
+            data={DATA}
+            //   renderItem={({item}) => <Item title={item.title} />}
+            renderItem={item => (
+              <View style={styles.item}>
+                <View>
+                  <Text style={styles.title}>{item.item.title}</Text>
+                </View>
+                <View style={styles.icon}>
+                  <ButtonIcon
+                    icon="imageIcon"
+                    type="iconBtn"
+                    onPress={pressHandle}>
+                    {' '}
+                  </ButtonIcon>
+                </View>
               </View>
-              <View style={styles.icon}>
-                <ButtonIcon
-                  icon="imageIcon"
-                  type="iconBtn"
-                  onPress={pressHandle}>
-                  {' '}
-                </ButtonIcon>
-              </View>
-            </View>
-          )}
-          keyExtractor={item => item.id}
-        />
-      </View>
+            )}
+            keyExtractor={item => item.id}
+          />
+        </View>
+      {/* </View> */}
     </>
   );
 };

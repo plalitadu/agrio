@@ -9,6 +9,7 @@ import MainTab from './MainTab';
 import {RootStackParamList} from '../configs/common';
 import {SCREEN} from '../configs/screens';
 import ManageFarmScreen from '../screens/ManageFarmScreen';
+import AddFarmScreen from '../screens/AddFarmScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,7 @@ const RootNavigation: React.FC = () => {
           component={FarmListScreen}></Stack.Screen>
         <Stack.Screen name={SCREEN.MAINTAB} component={MainTab}></Stack.Screen>
         <Stack.Screen name={SCREEN.MANAGE} component={ManageFarmScreen}></Stack.Screen>
+        <Stack.Screen name={SCREEN.ADDFARM} component={AddFarmScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

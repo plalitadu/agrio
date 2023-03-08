@@ -38,6 +38,10 @@ const FarmListScreen: React.FC = (props: any) => {
     navigation.navigate('MANAGE', {});
   };
 
+  const addFarmHandle = () => {
+    navigation.navigate('ADDFARM', {});
+  };
+
   const pressHandle = () => {
     console.log('pressHandle');
   };
@@ -53,7 +57,7 @@ const FarmListScreen: React.FC = (props: any) => {
               headerName="Farm"
               >
               <View style={styles.button}>
-                <ButtonIcon icon="plus" type="textBtn" onPress={pressHandle}>
+                <ButtonIcon icon="plus" type="textBtn" onPress={addFarmHandle}>
                   Add Farm
                 </ButtonIcon>
                 <ButtonIcon icon="bars" type="textBtn" onPress={manageFarmHandle}>
@@ -82,12 +86,13 @@ const FarmListScreen: React.FC = (props: any) => {
             </Text>
           </View> */}
         </View>
-        <ScrollView>
+        <ScrollView style={{marginTop:-5}}>
           <View
             style={{
               flex: 1,
               padding: 24,
               backgroundColor: '#FFFFFF',
+          
             }}>
             <View>
               <View
