@@ -65,7 +65,7 @@ const tabBarOption: BottomTabNavigationOptions = {
     //   fontSize: Scale.point(12),
     // position:'relative',
     // height: 0,
-    fontFamily: 'GraphikTH-SemiBold',
+    // fontFamily: 'GraphikTH-SemiBold',
   },
 };
 
