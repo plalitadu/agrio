@@ -39,7 +39,7 @@ const FarmListScreen: React.FC = (props: any) => {
   };
 
   const roomDetailHandle = () => {
-    navigation.navigate('ROOMDETAIL', {});
+    navigation.navigate('ADDRACK', {});
   };
   const addFarmHandle = () => {
     navigation.navigate('ADDFARM', {});
@@ -60,11 +60,17 @@ const FarmListScreen: React.FC = (props: any) => {
               headerName="Farm">
               <View style={styles.button}>
                 <ButtonIcon
+                  icon="plus"
+                  type="textBtn"
+                  onPress={roomDetailHandle}>
+                  Add Rack
+                </ButtonIcon>
+                {/* <ButtonIcon
                   icon="buromobelexperte"
                   type="textBtn"
                   onPress={roomDetailHandle}>
                   Room Detail
-                </ButtonIcon>
+                </ButtonIcon> */}
                 <ButtonIcon icon="plus" type="textBtn" onPress={addFarmHandle}>
                   Add Farm
                 </ButtonIcon>

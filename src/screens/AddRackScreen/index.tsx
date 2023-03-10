@@ -8,13 +8,15 @@ import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
 import {Text} from '../../components/Text';
 
-const AddFarmScreen: React.FC = () => {
+const AddRackScreen: React.FC = () => {
   const navigation = useNavigation<ScreenNavigationProp>();
-  const [farmName, setFarmName] = React.useState('');
+  const [rackName, setRackName] = React.useState('');
+  const [rackNumberLevels, setRackNumberLevels] = React.useState('');
+  const [rackNumberRows, setRackNumberRows] = React.useState('');
+  const [potPerRow, setPotPerRow] = React.useState('');
   const backHandle = () => {
     navigation.goBack();
   };
-  //   const;
   return (
     <View>
       <View style={styles.headerStyle}>
@@ -26,24 +28,51 @@ const AddFarmScreen: React.FC = () => {
       </View>
 
       <View style={styles.container}>
-        <View style={{paddingBottom: 20}}>
-          <Text h1={true} colors="textPrimary">
-            Add New Farm
-          </Text>
-        </View>
-        <View style={styles.imageBox}>
+        {/* <View style={styles.imageBox}>
           <Image source={Images.nofarm} />
+        </View> */}
+        <View>
+          <Text h1={true} colors="textPrimary" style={{marginTop: 10}}>
+            Add a New Rack
+          </Text>
         </View>
         <View style={styles.content}>
           <View>
-            <Text>Farm Name</Text>
+            <TextInput
+              keyboardType="default"
+              placeholder="Rack Name"
+              onChangeText={text => setRackName(text)}
+              value={rackName}
+              editable={true}
+            />
           </View>
+        </View>
+        <View style={{paddingTop: 20}}>
+          <Text h2={true} colors="textPrimary" style={{marginTop: 10}}>
+            Rack size
+          </Text>
+        </View>
+        <View style={styles.content}>
           <View>
             <TextInput
               keyboardType="default"
-              placeholder="Farm 1"
-              onChangeText={text => setFarmName(text)}
-              value={farmName}
+              placeholder="Number of levels"
+              onChangeText={text => setRackNumberLevels(text)}
+              value={rackNumberLevels}
+              editable={true}
+            />
+            <TextInput
+              keyboardType="default"
+              placeholder="Number of rows"
+              onChangeText={text => setRackNumberRows(text)}
+              value={rackNumberRows}
+              editable={true}
+            />
+            <TextInput
+              keyboardType="default"
+              placeholder="Pot per row"
+              onChangeText={text => setPotPerRow(text)}
+              value={potPerRow}
               editable={true}
             />
           </View>
@@ -76,4 +105,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddFarmScreen;
+export default AddRackScreen;

@@ -22,4 +22,5 @@ export type RootStackParamList = {
   MANAGE:{};
   ADDFARM:{};
   ROOMDETAIL:{}
+  ADDRACK: {}
 };
