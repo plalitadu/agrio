@@ -298,6 +298,8 @@ android {
 dependencies {
     // implementation 'com.google.android.material:material:1.9.0-alpha01'
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    
+    implementation project(':react-native-splash-screen')
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

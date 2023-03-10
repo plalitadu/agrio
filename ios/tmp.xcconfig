@@ -1,1 +1,3 @@
-
+API_AGRIO_URL=https:/$()/api.agrio.agrowdev.com
+APP_NAME=Agrio
+APP_NAME_DEV=Agrio (Dev)

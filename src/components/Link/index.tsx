@@ -12,16 +12,16 @@ const styles = StyleSheet.create({
 
 type LinkProps = {
     page: string;
-    param?:any ;
+    param?:object ;
     children: any;
     style?:any;
-    onClick?:any
+    onClick?:()=>void
 }
 
 const Link: React.FC<LinkProps> = props => {
   return (
     <>
-      <LinkOriginal style={[styles.hyperLink, props.style]} to={{screen: props.page, params: props.param}} onPress={props.onClick}>{props.children}</LinkOriginal>
+      <LinkOriginal style={[styles.hyperLink, props.style]} to={{screen: props.page, params: props.param || {}}} onPress={props.onClick}>{props.children}</LinkOriginal>
     </>
   );
 };

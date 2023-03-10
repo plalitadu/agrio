@@ -19,4 +19,6 @@ export type RootStackParamList = {
   DEVICE:{};
   SHOP:{};
   SETTING:{};
+  MANAGE:{};
+  ADDFARM:{};
 };

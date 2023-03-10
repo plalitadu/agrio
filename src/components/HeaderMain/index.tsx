@@ -1,44 +1,50 @@
 import React from 'react';
-import {View, StyleSheet,Platform} from 'react-native';
+import {View, StyleSheet, Platform} from 'react-native';
 import {Text} from '../Text';
 import ButtonIcon from '../ButtonIcon';
 
 const styles = StyleSheet.create({
   main: {
     flexDirection: 'row',
-    padding:20,
-    borderBottomColor :'#E2E2E2',
-    borderBottomWidth:4,
-    height:70,
-    marginTop: Platform.OS === 'ios' ? 35 : 10
-
+    padding: 20,
+    borderBottomColor: '#E2E2E2',
+    borderBottomWidth: 4,
+    height: 70,
+    marginTop: Platform.OS === 'ios' ? 35 : 10,
   },
-  button:{
-    flexDirection:'row',
-    flex:3,
-    
-  }
+  button: {
+    flexDirection: 'row',
+    flex: 3,
+  },
+  subHeader:{marginTop:4,marginLeft:3}
 });
 
 type HeaderProps = {
-    type: string
-    children : string
+  type: string;
+  children?: any;
+  headerName?: string;
+  onClick?: () => void;
 };
 
 const HeaderMain: React.FC<HeaderProps> = (props: any) => {
-  const pressHandle = ()=>{
-    console.log('pressHandle')
-  }
+  console.log('header', props);
+
   return (
     <View style={styles.main}>
-      <View style={{flex:3}}>
-        <Text h1={true} colors="textPrimary">{props.children}</Text>
+      {props.type === 'back-header' ? props.children : <></>}
+      <View style={{flex: 3}}>
+        {props.type === 'farm-list' ? (
+          <Text h1={true} colors="textPrimary">
+            {props.headerName}
+          </Text>
+        ) : (
+          <Text body1={true} colors="textPrimary" style={styles.subHeader}>
+            {props.headerName}
+          </Text>
+        )}
       </View>
-      <View style={styles.button}>
-        <ButtonIcon icon="plus" type="textBtn" onPress={pressHandle} >Add Farm</ButtonIcon>
-        <ButtonIcon icon="bars" type="textBtn" onPress={pressHandle} >Manage</ButtonIcon>
-        <ButtonIcon icon="bell" type="iconBtn" onPress={pressHandle} > </ButtonIcon>
-      </View>
+      {props.type === 'farm-list' ? props.children : <></>}
+
     </View>
   );
 };
