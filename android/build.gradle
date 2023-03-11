@@ -23,7 +23,7 @@ buildscript {
     }
     dependencies {
         // classpath('com.android.tools.build:gradle:7.3.0')
-         classpath("com.android.tools.build:gradle:7.0.4")
+         classpath('com.android.tools.build:gradle:7.4.2')
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("de.undercouch:gradle-download-task:4.1.2")
         // classpath("com.google.android.material:material:1.9.0-alpha01")
@@ -53,5 +53,6 @@ allprojects {
         google()
         // mavenCentral()
         maven { url 'https://www.jitpack.io' }
+        maven { url 'https://maven.google.com' }
     }
 }
