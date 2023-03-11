@@ -8,7 +8,7 @@ import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
 import {Text} from '../../components/Text';
 
-const AddFarmScreen: React.FC = () => {
+const RoomScreen: React.FC = () => {
   const navigation = useNavigation<ScreenNavigationProp>();
   const [farmName, setFarmName] = React.useState('');
   const backHandle = () => {
@@ -18,34 +18,21 @@ const AddFarmScreen: React.FC = () => {
   return (
     <View>
       <View style={styles.headerStyle}>
-        <HeaderMain type="back-header" headerName="">
+        <HeaderMain type="back-header" headerName="Room 1">
           <ButtonIcon icon="arrow-left" type="iconBtn" onPress={backHandle}>
             {' '}
           </ButtonIcon>
         </HeaderMain>
       </View>
-
       <View style={styles.container}>
-        <View style={{paddingBottom: 20}}>
-          <Text h1={true} colors="textPrimary">
-            Add New Farm
-          </Text>
-        </View>
-        <View style={styles.imageBox}>
-          <Image source={Images.nofarm} />
-        </View>
+        <Pressable style={styles.imageBox}>
+          <ButtonIcon icon="plus" type="textBtn" onPress={() => {}}>
+            Add Devices
+          </ButtonIcon>
+        </Pressable>
         <View style={styles.content}>
           <View>
-            <Text>Farm Name</Text>
-          </View>
-          <View>
-            <TextInput
-              keyboardType="default"
-              placeholder="Farm 1"
-              onChangeText={text => setFarmName(text)}
-              value={farmName}
-              editable={true}
-            />
+            <Text h1={true}>Racks</Text>
           </View>
         </View>
       </View>
@@ -55,7 +42,7 @@ const AddFarmScreen: React.FC = () => {
 
 const styles = StyleSheet.create({
   headerStyle: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FFFFFF',
   },
   container: {
     padding: 20,
@@ -65,15 +52,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   imageBox: {
+    borderWidth: 0.2,
     alignItems: 'center',
     padding: 20,
     width: '100%',
-    backgroundColor: '#E9E9E9',
+    backgroundColor: '#FFFFFF',
     borderRadius: 8,
+    paddingTop: 60,
   },
   content: {
     paddingTop: 20,
   },
 });
 
-export default AddFarmScreen;
+export default RoomScreen;

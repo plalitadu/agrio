@@ -29,7 +29,7 @@ type ButtonProps = {
 };
 
 const ButtonIcon: React.FC<ButtonProps> = (props: any) => {
-  console.log('test',props.icon.substring(9,props.icon.length))
+  // console.log('test',props.icon.substring(9,props.icon.length))
   return (
     <>
       {props.type == 'textBtn' ? (
@@ -38,16 +38,17 @@ const ButtonIcon: React.FC<ButtonProps> = (props: any) => {
           <Text style={{color: '#202020'}}>{props.children}</Text>
         </TouchableOpacity>
       ) : (
-        <TouchableOpacity style={styles.iconButton} onPress={props.onPress}>
-        
-          {props.icon === 'imageIcon' ? (
-            <Image.setting_icon width="25px" height="26px" />
-          ) : (
-            <Icon name={props.icon} size={15} color="#202020" />
-          )}
+        <>
+          <TouchableOpacity style={styles.iconButton} onPress={props.onPress}>
+            {props.icon === 'imageIcon' ? (
+              <Image.setting_icon width="25px" height="26px" />
+            ) : (
+              <Icon name={props.icon} size={15} color="#202020" />
+            )}
 
-          {/* <Text style={{color: '#202020'}}>{props.children}</Text> */}
-        </TouchableOpacity>
+            {/* <Text style={{color: '#202020'}}>{props.children}</Text> */}
+          </TouchableOpacity>
+        </>
       )}
     </>
   );

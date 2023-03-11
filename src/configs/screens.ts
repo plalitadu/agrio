@@ -16,7 +16,9 @@ type Screen = {
     SHOP:'SHOP',
     SETTING:'SETTING',
     MANAGE:'MANAGE',
-    ADDFARM:'ADDFARM'
+    ADDFARM:'ADDFARM',
+    ROOMDETAIL: 'ROOMDETAIL',
+    ADDRACK: 'ADDRACK'
 
   }
 

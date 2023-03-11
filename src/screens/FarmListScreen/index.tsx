@@ -38,6 +38,9 @@ const FarmListScreen: React.FC = (props: any) => {
     navigation.navigate('MANAGE', {});
   };
 
+  const roomDetailHandle = () => {
+    navigation.navigate('ADDRACK', {});
+  };
   const addFarmHandle = () => {
     navigation.navigate('ADDFARM', {});
   };
@@ -54,13 +57,27 @@ const FarmListScreen: React.FC = (props: any) => {
             <HeaderMain
               type="farm-list"
               onClick={manageFarmHandle}
-              headerName="Farm"
-              >
+              headerName="Farm">
               <View style={styles.button}>
+                <ButtonIcon
+                  icon="plus"
+                  type="textBtn"
+                  onPress={roomDetailHandle}>
+                  Add Rack
+                </ButtonIcon>
+                {/* <ButtonIcon
+                  icon="buromobelexperte"
+                  type="textBtn"
+                  onPress={roomDetailHandle}>
+                  Room Detail
+                </ButtonIcon> */}
                 <ButtonIcon icon="plus" type="textBtn" onPress={addFarmHandle}>
                   Add Farm
                 </ButtonIcon>
-                <ButtonIcon icon="bars" type="textBtn" onPress={manageFarmHandle}>
+                <ButtonIcon
+                  icon="bars"
+                  type="textBtn"
+                  onPress={manageFarmHandle}>
                   Manage
                 </ButtonIcon>
                 <ButtonIcon icon="bell" type="iconBtn" onPress={pressHandle}>
@@ -86,13 +103,12 @@ const FarmListScreen: React.FC = (props: any) => {
             </Text>
           </View> */}
         </View>
-        <ScrollView style={{marginTop:-5}}>
+        <ScrollView style={{marginTop: -5}}>
           <View
             style={{
               flex: 1,
               padding: 24,
               backgroundColor: '#FFFFFF',
-          
             }}>
             <View>
               <View

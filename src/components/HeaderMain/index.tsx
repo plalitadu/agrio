@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
     borderBottomColor: '#E2E2E2',
-    borderBottomWidth: 4,
+    borderBottomWidth: 6,
     height: 70,
     marginTop: Platform.OS === 'ios' ? 35 : 10,
   },
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 3,
   },
-  subHeader:{marginTop:4,marginLeft:3}
+  subHeader: {marginTop: 4, marginLeft: 3},
 });
 
 type HeaderProps = {
@@ -44,7 +44,6 @@ const HeaderMain: React.FC<HeaderProps> = (props: any) => {
         )}
       </View>
       {props.type === 'farm-list' ? props.children : <></>}
-
     </View>
   );
 };
