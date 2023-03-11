@@ -1,11 +1,19 @@
 import React from 'react';
-import {View, Image, Pressable, ScrollView, StyleSheet} from 'react-native';
+import {
+  View,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from 'react-native';
+import {Button} from 'react-native-paper';
 import HeaderMain from '../../components/HeaderMain';
 import ButtonIcon from '../../components/ButtonIcon';
 import {TextInput} from '../../components/TextInput';
-import Images from '../../configs/images';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
+import {SCREEN} from '../../configs/screens';
 import {Text} from '../../components/Text';
 
 const AddRackScreen: React.FC = () => {
@@ -16,6 +24,10 @@ const AddRackScreen: React.FC = () => {
   const [potPerRow, setPotPerRow] = React.useState('');
   const backHandle = () => {
     navigation.goBack();
+  };
+
+  const selectDeviceScreen = () => {
+    navigation.navigate(SCREEN.SELECTDEVICE as any);
   };
   return (
     <View>
@@ -36,7 +48,7 @@ const AddRackScreen: React.FC = () => {
             Add a New Rack
           </Text>
         </View>
-        <View style={styles.content}>
+        <View>
           <View>
             <TextInput
               keyboardType="default"
@@ -52,7 +64,7 @@ const AddRackScreen: React.FC = () => {
             Rack size
           </Text>
         </View>
-        <View style={styles.content}>
+        <View>
           <View>
             <TextInput
               keyboardType="default"
@@ -75,6 +87,43 @@ const AddRackScreen: React.FC = () => {
               value={potPerRow}
               editable={true}
             />
+          </View>
+        </View>
+
+        <View style={styles.content}>
+          <TouchableOpacity onPress={selectDeviceScreen}>
+            <View
+              style={{
+                flexDirection: 'row',
+                width: '100%',
+              }}>
+              <View style={{flex: 0.8}}>
+                <Text style={{fontWeight: '400'}}>Rack's Devices</Text>
+                <Text style={{fontSize: 12, color: '#575757'}}>
+                  No Device Selected
+                </Text>
+              </View>
+              <View
+                style={{alignItems: 'flex-end', flex: 0.2, paddingTop: 7.5}}>
+                <Icon name="chevron-right" size={15} color="#202020" />
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flex: 0.5,
+          }}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <Button
+              style={styles.btnStyle}
+              buttonColor="#000000"
+              textColor="#ffffff"
+              mode="elevated"
+              disabled
+              onPress={() => {}}>
+              Add a Rack
+            </Button>
           </View>
         </View>
       </View>
@@ -101,7 +150,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   content: {
-    paddingTop: 20,
+    paddingTop: 40,
+  },
+  btnStyle: {
+    color: '#ffffff',
+    borderRadius: 8,
   },
 });
 
