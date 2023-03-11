@@ -47,8 +47,8 @@ const FlatListRadius: React.FC<FlatListRadiusProps> = props => {
                 color="#469B72"
                 style={{
                   borderRadius: 10,
-                  backgroundColor: '#469B72',
-                  color: 'white',
+                  //   backgroundColor: '#469B72',
+                  //   color: 'white',
                 }}
               />
             ) : (
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
 
   item: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     padding: 10,
     height: 70,
     borderColor: '#E2E2E2',
