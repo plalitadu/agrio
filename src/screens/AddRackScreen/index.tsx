@@ -13,6 +13,7 @@ import {TextInput} from '../../components/TextInput';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
+import {SCREEN} from '../../configs/screens';
 import {Text} from '../../components/Text';
 
 const AddRackScreen: React.FC = () => {
@@ -23,6 +24,10 @@ const AddRackScreen: React.FC = () => {
   const [potPerRow, setPotPerRow] = React.useState('');
   const backHandle = () => {
     navigation.goBack();
+  };
+
+  const selectDeviceScreen = () => {
+    navigation.navigate(SCREEN.SELECTDEVICE as any);
   };
   return (
     <View>
@@ -86,7 +91,7 @@ const AddRackScreen: React.FC = () => {
         </View>
 
         <View style={styles.content}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={selectDeviceScreen}>
             <View
               style={{
                 flexDirection: 'row',
@@ -105,16 +110,21 @@ const AddRackScreen: React.FC = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <View style={{flex: 1, paddingTop: '70%'}}>
-          <Button
-            style={styles.btnStyle}
-            buttonColor="#000000"
-            textColor="#ffffff"
-            mode="elevated"
-            disabled
-            onPress={() => {}}>
-            Add a Rack
-          </Button>
+        <View
+          style={{
+            flex: 0.5,
+          }}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <Button
+              style={styles.btnStyle}
+              buttonColor="#000000"
+              textColor="#ffffff"
+              mode="elevated"
+              disabled
+              onPress={() => {}}>
+              Add a Rack
+            </Button>
+          </View>
         </View>
       </View>
     </View>
