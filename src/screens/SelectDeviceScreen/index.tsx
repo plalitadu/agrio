@@ -6,11 +6,13 @@ import {
   ScrollView,
   StyleSheet,
   useWindowDimensions,
+  FlatList,
 } from 'react-native';
 import {Button} from 'react-native-paper';
 import HeaderMain from '../../components/HeaderMain';
 import ButtonIcon from '../../components/ButtonIcon';
-import {TextInput} from '../../components/TextInput';
+import {FlatListRadius} from '../../components/FlatListRadius';
+import Images from '../../configs/images';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
@@ -19,9 +21,8 @@ import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 
 const SelectDeviceScreen: React.FC = () => {
   const navigation = useNavigation<ScreenNavigationProp>();
-  const [rackName, setRackName] = React.useState('');
+  const [selectedId, setSelectedId] = React.useState<string>('');
   const layout = useWindowDimensions();
-
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {key: 'doser', title: 'Doser', color: 'red', backgroundColor: 'red'},
@@ -31,15 +32,43 @@ const SelectDeviceScreen: React.FC = () => {
   const backHandle = () => {
     navigation.goBack();
   };
-  const FirstRoute = () => <View style={{flex: 1}} />;
 
-  const SecondRoute = () => <View style={{flex: 1}} />;
+  const DATA = [
+    {
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      title: 'Agrow Dose',
+      serial: '111',
+    },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      title: 'Second Item',
+      serial: '222',
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      title: 'Third Item',
+      serial: '333',
+    },
+  ];
+  const onSelectedId = (data: string) => {
+    setSelectedId(data);
+  };
+  const deviceObject = () => (
+    <FlatListRadius
+      onPress={onSelectedId}
+      selectedId={selectedId}
+      data={DATA}
+    />
+  );
+  const DoserRoute = () => <View style={{flex: 1}}>{deviceObject()}</View>;
+
+  const LedRoute = () => <View style={{flex: 1}} />;
 
   const SwitchRoute = () => <View style={{flex: 1}} />;
 
   const renderScene = SceneMap({
-    doser: FirstRoute,
-    led: SecondRoute,
+    doser: DoserRoute,
+    led: LedRoute,
     switch: SwitchRoute,
   });
 
@@ -59,41 +88,44 @@ const SelectDeviceScreen: React.FC = () => {
             Select Device
           </Text>
         </View>
-        {/* <View> */}
-        <TabView
-          style={{paddingTop: 10}}
-          navigationState={{index, routes}}
-          renderScene={renderScene}
-          onIndexChange={setIndex}
-          initialLayout={{width: layout.width}}
-          renderTabBar={props => (
-            <TabBar
-              {...props}
-              style={{backgroundColor: '#ffffff'}}
-              indicatorStyle={{backgroundColor: '#469B72'}}
-              renderLabel={({route, focused}) => (
-                <Text style={{color: focused ? '#202020' : '#C1C1C1'}}>
-                  {route.title}
-                </Text>
-              )}
-            />
-          )}
-        />
-        {/* </View> */}
         <View
           style={{
-            flex: 0.68,
+            flex: 2,
           }}>
-          <View style={{flex: 1, justifyContent: 'flex-end'}}>
-            <Button
-              style={styles.btnStyle}
-              buttonColor="#000000"
-              textColor="#ffffff"
-              mode="elevated"
-              onPress={() => {}}>
-              Select
-            </Button>
-          </View>
+          <TabView
+            style={{paddingTop: 10}}
+            navigationState={{index, routes}}
+            renderScene={renderScene}
+            onIndexChange={setIndex}
+            initialLayout={{width: layout.width}}
+            renderTabBar={props => (
+              <TabBar
+                {...props}
+                style={{backgroundColor: '#ffffff'}}
+                indicatorStyle={{backgroundColor: '#469B72'}}
+                renderLabel={({route, focused}) => (
+                  <Text style={{color: focused ? '#202020' : '#C1C1C1'}}>
+                    {route.title}
+                  </Text>
+                )}
+              />
+            )}
+          />
+        </View>
+        <View
+          style={{
+            flex: 1,
+          }}>
+          <Button
+            style={styles.btnStyle}
+            buttonColor="#000000"
+            textColor="#ffffff"
+            mode="elevated"
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            Select
+          </Button>
         </View>
       </View>
     </View>
@@ -113,10 +145,8 @@ const styles = StyleSheet.create({
   },
   imageBox: {
     alignItems: 'center',
-    padding: 20,
-    width: '100%',
-    backgroundColor: '#E9E9E9',
-    borderRadius: 8,
+    width: 10,
+    height: 10,
   },
   content: {
     paddingTop: 40,
@@ -125,6 +155,21 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     borderRadius: 8,
   },
+
+  item: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 15,
+    height: 50,
+    borderColor: '#E2E2E2',
+    borderWidth: 1,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  title: {
+    fontSize: 16,
+  },
+  icon: {marginTop: -14},
 });
 
 export default SelectDeviceScreen;
