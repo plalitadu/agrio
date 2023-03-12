@@ -7,6 +7,7 @@ import { COLORS_PRIMARY } from './src/configs/theme';
 import RootNavigation from './src/navigation/RootNavigation';
 import SplashScreen from 'react-native-splash-screen';
 
+
 const App = () => {
   const loginHandle = () => {
     console.log('login');

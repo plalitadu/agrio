@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.13",
+    "@react-native-community/geolocation": "^3.0.5",
     "@react-navigation/bottom-tabs": "^6.5.5",
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/native-stack": "^6.9.8",
@@ -29,6 +30,7 @@
     "react": "17.0.2",
     "react-native": "0.68.2",
     "react-native-config": "^1.4.12",
+    "react-native-image-picker": "^5.1.0",
     "react-native-maps": "^1.4.0",
     "react-native-pager-view": "^6.1.4",
     "react-native-paper": "^5.1.4",

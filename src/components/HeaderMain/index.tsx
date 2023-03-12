@@ -27,7 +27,7 @@ type HeaderProps = {
 };
 
 const HeaderMain: React.FC<HeaderProps> = (props: any) => {
-  console.log('header', props);
+  // console.log('header', props);
 
   return (
     <View style={styles.main}>

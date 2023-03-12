@@ -13,5 +13,6 @@ import DeviceIcon from './device.svg'
 import FarmIcon from './farm.svg'
 import ShopIcon from './shop.svg'
 import SettingIcon from './setting.svg'
+import CurrentLocationIcon from './current_location.svg'
 
-export {HomeIcon,DeviceIcon,FarmIcon,ShopIcon,SettingIcon}
+export {HomeIcon,DeviceIcon,FarmIcon,ShopIcon,SettingIcon,CurrentLocationIcon}
