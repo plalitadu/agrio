@@ -14,6 +14,7 @@ import RoomScreen from '../screens/RoomScreen';
 import AddRackScreen from '../screens/AddRackScreen';
 import SelectDeviceScreen from '../screens/SelectDeviceScreen';
 import MapFarmScreen from '../screens/MapFarmScreen';
+import FarmDetailScreen from '../screens/FarmDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +58,9 @@ const RootNavigation: React.FC = () => {
             <Stack.Screen
           name={SCREEN.MAPFARM}
           component={MapFarmScreen}></Stack.Screen>
+                 <Stack.Screen
+          name={SCREEN.FARMDETAIL}
+          component={FarmDetailScreen}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

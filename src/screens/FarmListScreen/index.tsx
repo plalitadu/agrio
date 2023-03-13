@@ -49,6 +49,11 @@ const FarmListScreen: React.FC = (props: any) => {
     console.log('pressHandle');
   };
 
+  const farmDetailHandle = (data:any) =>{
+    console.log('farmdetail',data)
+    navigation.navigate('FARMDETAIL', {data:data})
+  }
+
   return (
     <>
       <View style={{flexDirection: 'column', flex: 1}}>
@@ -87,21 +92,6 @@ const FarmListScreen: React.FC = (props: any) => {
             </HeaderMain>
           </View>
 
-          {/* <View
-            style={{
-              paddingTop: 10,
-              paddingLeft: 20,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              // flex:0.4
-            }}>
-            <Text h6={true} colors="textPrimary">
-              My Farm
-            </Text>
-            <Text body2={true} colors="textPrimary" style={{paddingRight: 20}}>
-              0 Farm
-            </Text>
-          </View> */}
         </View>
         <ScrollView style={{marginTop: -5}}>
           <View
@@ -132,8 +122,9 @@ const FarmListScreen: React.FC = (props: any) => {
             <View>
               {DATA.length ? (
                 DATA?.map((r: any, key: any) => (
+           
                   <Pressable
-                    onPress={() => console.log('presss')}
+                    onPress={()=>farmDetailHandle(r)}
                     key={`farm-${key}`}>
                     <View
                       style={{
@@ -165,7 +156,7 @@ const FarmListScreen: React.FC = (props: any) => {
                               colors="textSecondary"
                               body1={true}
                               style={{fontWeight: 'bold'}}>
-                              Farm name
+                           {r.title}
                             </Text>
                           </View>
                           <View
