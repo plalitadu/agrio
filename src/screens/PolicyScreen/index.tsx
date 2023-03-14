@@ -47,24 +47,6 @@ const PolicySrceen: React.FC = () => {
     }
   }, [policyAccepted]);
 
-  // useEffect(()=>{
-  //   const policyContent: HTMLElement | null = document.getElementById("policyContent");
-  //   console.log('policyContent',policyContent)
-  //   if (policyContent) {
-  //     let lastScrollTop = 0;
-  //     policyContent.onscroll = function (e) {
-
-  //       if (policyContent.scrollTop < lastScrollTop) {
-  //         return
-  //       }
-  //       lastScrollTop = policyContent?.scrollTop <= 0 ? 0 : policyContent?.scrollTop;
-  //       if (policyContent?.scrollTop + policyContent?.offsetHeight >= policyContent?.scrollHeight) {
-
-  //         setEndOfPage(true)
-  //       }
-  //     };
-  //   }
-  // })
   const isCloseToBottom = nativeEvent => {
     const paddingToBottom = 20;
     return (

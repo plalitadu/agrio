@@ -26,4 +26,5 @@ export type RootStackParamList = {
   SELECTDEVICE: {}
   MAPFARM:{}
   FARMDETAIL:{}
+  ADDROOM:{}
 };

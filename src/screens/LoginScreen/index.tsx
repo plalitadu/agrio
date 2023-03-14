@@ -10,6 +10,7 @@ import {useNavigation, Link as LinkOri} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
 import {Link} from '../../components/Link';
 import { authenToken } from '../../api/apiAuth';
+import { SCREEN } from '../../configs/screens';
 
 const styles = StyleSheet.create({
   main: {
@@ -67,7 +68,7 @@ const LoginScreen: React.FC<LoginProps> = () => {
       const token = await authenToken({username:email,password:password})
       if(token.access !== undefined){
         
-        navigation.navigate('MAINTAB',{token:token.access})
+        navigation.navigate(SCREEN.MAINTAB as any,{token:token.access})
       }else{
         //alert login error
       }

@@ -81,7 +81,7 @@ const FarmDetailScreen: React.FC = (props: any) => {
               }}>
               <Text colors="textPrimary">0 Room</Text>
               <Text body2={true}>
-                <Link page="ROOMDETAIL" style={{color: '#469B72'}}>
+                <Link page="ADDROOM" style={{color: '#469B72'}}>
                   Add Room +
                 </Link>
               </Text>

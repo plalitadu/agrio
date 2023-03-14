@@ -6,6 +6,7 @@ import Images from '../../configs/images';
 import {useNavigation} from '@react-navigation/native';
 import {ScreenNavigationProp} from '../../configs/common';
 import ButtonIcon from '../../components/ButtonIcon';
+import { SCREEN } from '../../configs/screens';
 
 const styles = StyleSheet.create({
   button: {
@@ -35,14 +36,14 @@ const FarmListScreen: React.FC = (props: any) => {
   ];
 
   const linkToManageFarmHandle = () => {
-    navigation.navigate('MANAGE', {});
+    navigation.navigate(SCREEN.MANAGE as any);
   };
 
   const linkToRoomDetailHandle = () => {
-    navigation.navigate('ADDRACK', {});
+    navigation.navigate(SCREEN.ADDRACK as any);
   };
   const linkToAddFarmHandle = () => {
-    navigation.navigate('ADDFARM', {mode:'create'});
+    navigation.navigate(SCREEN.ADDFARM as any, {mode:'create'});
   };
 
   const pressHandle = () => {
@@ -51,7 +52,7 @@ const FarmListScreen: React.FC = (props: any) => {
 
   const linkToFarmDetailHandle = (data:any) =>{
     console.log('farmdetail',data)
-    navigation.navigate('FARMDETAIL', {data:data})
+    navigation.navigate(SCREEN.FARMDETAIL as any, {data:data})
   }
 
   return (
@@ -141,7 +142,7 @@ const FarmListScreen: React.FC = (props: any) => {
                           <Image
                             source={Images.nofarm}
                             style={{
-                              width: '100%',
+                              width: 362,
                               height: 120,
                               marginTop: -7,
                               overflow: 'hidden',
