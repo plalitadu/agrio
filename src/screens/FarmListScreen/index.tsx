@@ -22,34 +22,34 @@ const FarmListScreen: React.FC = (props: any) => {
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
+      title: 'Farm 1',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
+      title: 'Farm 2',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      title: 'Farm 3',
     },
   ];
 
-  const manageFarmHandle = () => {
+  const linkToManageFarmHandle = () => {
     navigation.navigate('MANAGE', {});
   };
 
-  const roomDetailHandle = () => {
+  const linkToRoomDetailHandle = () => {
     navigation.navigate('ADDRACK', {});
   };
-  const addFarmHandle = () => {
-    navigation.navigate('ADDFARM', {});
+  const linkToAddFarmHandle = () => {
+    navigation.navigate('ADDFARM', {mode:'create'});
   };
 
   const pressHandle = () => {
     console.log('pressHandle');
   };
 
-  const farmDetailHandle = (data:any) =>{
+  const linkToFarmDetailHandle = (data:any) =>{
     console.log('farmdetail',data)
     navigation.navigate('FARMDETAIL', {data:data})
   }
@@ -61,13 +61,13 @@ const FarmListScreen: React.FC = (props: any) => {
           <View>
             <HeaderMain
               type="farm-list"
-              onClick={manageFarmHandle}
+              onClick={linkToManageFarmHandle}
               headerName="Farm">
               <View style={styles.button}>
                 <ButtonIcon
                   icon="plus"
                   type="textBtn"
-                  onPress={roomDetailHandle}>
+                  onPress={linkToRoomDetailHandle}>
                   Add Rack
                 </ButtonIcon>
                 {/* <ButtonIcon
@@ -76,13 +76,13 @@ const FarmListScreen: React.FC = (props: any) => {
                   onPress={roomDetailHandle}>
                   Room Detail
                 </ButtonIcon> */}
-                <ButtonIcon icon="plus" type="textBtn" onPress={addFarmHandle}>
+                <ButtonIcon icon="plus" type="textBtn" onPress={linkToAddFarmHandle}>
                   Add Farm
                 </ButtonIcon>
                 <ButtonIcon
                   icon="bars"
                   type="textBtn"
-                  onPress={manageFarmHandle}>
+                  onPress={linkToManageFarmHandle}>
                   Manage
                 </ButtonIcon>
                 <ButtonIcon icon="bell" type="iconBtn" onPress={pressHandle}>
@@ -124,7 +124,7 @@ const FarmListScreen: React.FC = (props: any) => {
                 DATA?.map((r: any, key: any) => (
            
                   <Pressable
-                    onPress={()=>farmDetailHandle(r)}
+                    onPress={()=>linkToFarmDetailHandle(r)}
                     key={`farm-${key}`}>
                     <View
                       style={{

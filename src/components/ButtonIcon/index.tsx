@@ -7,19 +7,7 @@ import {COLORS_TEXT} from '../../configs/theme';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Image from '../../configs/images';
 
-const styles = StyleSheet.create({
-  button: {
-    height: 95,
-    alignItems: 'center',
-    padding: 8,
-  },
-  iconButton: {
-    height: 95,
-    alignItems: 'center',
-    padding: 8,
-    marginLeft: 5,
-  },
-});
+
 
 type ButtonProps = {
   icon?: string;
@@ -46,8 +34,9 @@ const ButtonIcon: React.FC<ButtonProps> = (props: any) => {
               <Icon name={props.icon} size={15} color="#202020" />
             )}
 
-            {/* <Text style={{color: '#202020'}}>{props.children}</Text> */}
+           
           </TouchableOpacity>
+          <Text style={{color: '#202020',marginTop:4,marginLeft:5,fontSize:16}}>{props.children}</Text>
         </>
       )}
     </>
@@ -57,5 +46,19 @@ const ButtonIcon: React.FC<ButtonProps> = (props: any) => {
   //     <ButtonOriginal title={props.children} />
   // </View>)
 };
+
+const styles = StyleSheet.create({
+  button: {
+    height: 95,
+    alignItems: 'center',
+    padding: 8,
+  },
+  iconButton: {
+    height: 95,
+    alignItems: 'center',
+    padding: 8,
+    marginLeft: 3,
+  },
+});
 
 export default ButtonIcon;

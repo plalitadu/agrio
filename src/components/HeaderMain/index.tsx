@@ -6,7 +6,7 @@ import ButtonIcon from '../ButtonIcon';
 const styles = StyleSheet.create({
   main: {
     flexDirection: 'row',
-    padding: 20,
+    padding: 15,
     borderBottomColor: '#E2E2E2',
     borderBottomWidth: 6,
     height: 70,

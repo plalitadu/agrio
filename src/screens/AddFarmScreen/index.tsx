@@ -32,6 +32,7 @@ const options = {
 
 const AddFarmScreen: React.FC = (props: any) => {
   const {route = []} = props;
+  console.log('AddFarmScreen', route);
   const navigation = useNavigation<ScreenNavigationProp>();
   const [farmName, setFarmName] = React.useState('');
   const [farmImage, setFarmImage] = React.useState({
@@ -39,25 +40,26 @@ const AddFarmScreen: React.FC = (props: any) => {
     type: null,
     name: null,
   });
-
+  const [mode, setMode] = React.useState(route.params.mode);
+  console.log('mode', mode);
   const [farmLocation, setFarmLocation] = React.useState({
     latitude: 0,
     longitude: 0,
-    locationName:null
+    locationName: null,
   });
 
-  const [validateInputs,setValidateInputs] =React.useState({
+  const [validateInputs, setValidateInputs] = React.useState({
     validateImage: false,
     validateName: false,
-    validateLocation: false
-  })
+    validateLocation: false,
+  });
 
   useEffect(() => {
     if (route.params.latLongData) {
       setFarmLocation({
         latitude: route.params.latLongData.latitude,
         longitude: route.params.latLongData.longitude,
-        locationName:route.params.locationName
+        locationName: route.params.locationName,
       });
     }
   }, [route]);
@@ -100,8 +102,8 @@ const AddFarmScreen: React.FC = (props: any) => {
     navigation.navigate(SCREEN.MAPFARM as any);
   };
 
-  useEffect(()=>{
-    console.log('farmName',farmName)
+  useEffect(() => {
+    console.log('farmName', farmName);
     // const prevValidate = {...validateInputs}
     // if(farmName!== ''){
     //   setValidateInputs({
@@ -124,25 +126,28 @@ const AddFarmScreen: React.FC = (props: any) => {
     //     validateLocation : !prevValidate.validateLocation
     //   })
     // }
+  }, [farmName, farmImage, farmLocation]);
 
-  },[farmName,farmImage,farmLocation])
-
-  console.log('validateInputs',validateInputs)
+  console.log('validateInputs', validateInputs);
   return (
     <View>
       <View style={styles.headerStyle}>
         <HeaderMain type="back-header" headerName="">
           <ButtonIcon icon="arrow-left" type="iconBtn" onPress={backHandle}>
-            {' '}
+            {mode === 'create' ? ' ':'Edit Farm'}
           </ButtonIcon>
         </HeaderMain>
       </View>
 
       <View style={styles.container}>
         <View style={{paddingBottom: 20}}>
-          <Text h1={true} colors="textPrimary">
-            Add New Farm
-          </Text>
+          {mode === 'create' ? (
+            <Text h1={true} colors="textPrimary">
+              Add New Farm
+            </Text>
+          ) : (
+            <></>
+          )}
         </View>
         <View style={styles.imageBox}>
           <TouchableOpacity onPress={browseImageHandle}>
@@ -183,7 +188,8 @@ const AddFarmScreen: React.FC = (props: any) => {
                   </Text>
                 ) : (
                   <Text style={{fontSize: 12, color: '#575757'}}>
-                   {farmLocation.locationName}, Lat: {farmLocation.latitude}, Long: {farmLocation.longitude}
+                    {farmLocation.locationName}, Lat: {farmLocation.latitude},
+                    Long: {farmLocation.longitude}
                   </Text>
                 )}
               </View>
